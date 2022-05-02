@@ -3,17 +3,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./app.css">
     <title>Promise ft Vitalis</title>
   </head>
   <body>
-    <div>
+    <div class="container">
       <header id="header">
-        <img
+        <div class="img">
+            <img
           src="data:image/png;base64,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"
           alt=""
           id="header-img"
         />
-        <div>
+        </div>
+        <div class="container_nav">
           <nav id="nav-bar">
             <a href="#Home" class="nav-link" id="Home">Home</a
             ><a href="#Services" class="nav-link">Services</a
@@ -23,11 +26,11 @@
       </header>
       <video id="video" loop controls>
         <source
-          src="https://www.youtube.com/embed/X2cdi0CLrJc"
-          type="video/mp4"
+          src="./arctan.mp4"
+          type="video/MP4"
         />
       </video>
-      <div>
+      <div class="theform">
         <form action="https://www.freecodecamp.com/email-submit" id="form">
           <input
             type="email"
